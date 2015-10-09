@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    <link rel="shortcut icon" href='fav.ico'>
+    = stylesheet_tag "application", media: "all"
+    = javascript_tag "application"
+    %title
+      = @title || ENV['DEFAULT_TITLE']
+
+  %body
+    
+    = yield
