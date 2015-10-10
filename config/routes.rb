@@ -1,3 +1,5 @@
+require 'sinatra/asset_pipeline'
+
 module Example
   class App < Sinatra::Base
     configure do
