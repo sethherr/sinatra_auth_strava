@@ -41,12 +41,16 @@ For the `APPLICATION_SCOPES_REQUESTED`, separate scopes with commas.
 
 This template includes [rails-assets](https://rails-assets.org/), which makes it easy to use [bower](http://bower.io/) packages.
 
+**View [the list of bower packages](http://bower.io/search/)** 
+
 Add bower packages to the Gemfile by putting them in the Bower packages block in this format:
 
     gem 'rails-assets-BOWER_PACKAGE_NAME'`.
 
-*Since Javascript packages change quickly, it's a good idea to lock the packages with a loose version after you `bundle install`. So for the jQuery version currently installed, that's `gem 'rails-assets-jquery', '~> 2.1.4'` (which means >= 2.1.4 and < 2.2.0).*
+Since Javascript packages change quickly, it's a particularly good idea to lock the packages with a loose version after you `bundle install`. e.g. for the jQuery version currently installed,
 
-You can then safely update your packages with `bundle update`
+    `gem 'rails-assets-jquery', '~> 2.1.4'`
 
-**View [the list of bower packages](http://bower.io/search/)** 
+*(which means >= 2.1.4 and < 2.2.0).*
+
+So you can safely update your packages with `bundle update`
