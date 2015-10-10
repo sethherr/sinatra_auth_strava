@@ -54,3 +54,7 @@ Since Javascript packages change quickly, it's a particularly good idea to lock 
 *(which means >= 2.1.4 and < 2.2.0).*
 
 So you can safely update your packages with `bundle update`
+
+----
+
+Many thanks to [sinatra_auth_github](https://github.com/atmos/sinatra_auth_github) from which this draws inspiration.
