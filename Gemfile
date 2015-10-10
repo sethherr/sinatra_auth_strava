@@ -4,14 +4,14 @@ ruby '2.2.2'
 gem 'sinatra', '~> 1.4.6'
 
 gem 'multi_json', '~> 1.11.2'
+# hamlit is Broken right now, once it's fixed, switch haml and hamlit
 gem 'haml'
-# Broken right now, will be fixed soon tho!
 # gem 'hamlit', '~> 1.7.2'
 
 # Authentication stuff
 gem 'warden', '~> 1.2.3'
 gem 'oauth2', '~> 0.5.2'
-gem 'warden-oauthed', path: '/Users/sethy/Sites/reliefwatch/warden-reliefwatch'
+gem 'warden-oauthed'
 
 # Environmental variable configuration
 gem 'dotenv', '~> 2.0.2'
