@@ -2,14 +2,26 @@
 
 This is a template application to build mini websites authenticated with OAuth2, such as [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper) provides.
 
+If you aren't connecting to an authentication with doorkeeper, you may have to change 
+
 ## Using it:
 
 1. Fork or clone this repository
-2. Update the values in [.env](.env) with your values
+2. Update the values in [.env](.env) with [your values](#env-values)
 3. Go to the directory this is contained in the terminal
 4. Use `rerun rackup` to start the server 
 5. The above command will print out something like `WEBrick::HTTPServer#start: pid=62447 port=9292`. Go to localhost:{that_port_number} - e.g. [http://localhost:9292](http://localhost:9292). 
 6. Go there to the above url to see the app! :sparkles:
+
+## Env Values
+
+The `.env` file references the app you are using. You will need to create an app on the provider you're using.
+
+The callback url for this sinatra template is `localhost:9292/auth/oauthed/callback` - change localhost:9292 to reflect your local conditions - e.g., if you're running on a different port, or if you deploy this to something with a domain name. You will have to add this to the application on the provider.
+
+After you've created an application on the provider, add the client id and the client secret of it to the `.env` file.
+
+For the `APPLICATION_SCOPES_REQUESTED`, separate scopes with commas.
 
 ## Directories / files
 

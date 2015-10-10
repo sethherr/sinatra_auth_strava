@@ -6,3 +6,15 @@
       We're so happy that the authentication is working correctly
     %a.btn.btn-primary{ href: 'http://google.com'}
       Cool stuff
+  .panel.panel-default
+    .panel-body
+      %p
+        %strong
+          user
+        %code
+          = @user
+      %p
+        %strong
+          warden
+        %code
+          = @warden

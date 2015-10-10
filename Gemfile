@@ -11,7 +11,7 @@ gem 'haml'
 # Authentication stuff
 gem 'warden', '~> 1.2.3'
 gem 'oauth2', '~> 0.5.2'
-gem 'warden-reliefwatch', path: '/Users/sethy/Sites/reliefwatch/warden-reliefwatch'
+gem 'warden-oauthed', path: '/Users/sethy/Sites/reliefwatch/warden-reliefwatch'
 
 # Environmental variable configuration
 gem 'dotenv', '~> 2.0.2'
@@ -37,6 +37,7 @@ group :test do
   gem 'rack-test', :require => "rack/test"
   gem 'rspec', '~> 2.7'
   gem 'guard'
+  gem 'addressable'
   gem 'guard-rubocop'
   gem 'guard-rspec', '~> 4.2.8'
 end
