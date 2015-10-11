@@ -14,10 +14,14 @@ module Example
         end
       end
     end
+    enable :sessions
+
+    register Sinatra::Auth::Oauthed
+
 
     get '/' do
-      ensure_authenticated
-      @user = user
+      authenticate!
+      @user = oauthed_user
       @warden = env['warden']
       haml :demo_index
     end
@@ -27,14 +31,14 @@ module Example
     end
 
     get '/redirect_to' do
-      ensure_authenticated
+      authenticate!
       "Hello There, #{user.name}! return_to is working!"
     end
 
     # This is where the app redirects after authenticating with the OAuth provider
     # Probably don't change it
     get "/auth/oauthed/callback" do
-      ensure_authenticated
+      authenticate!
       redirect '/'
     end
 
