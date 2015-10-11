@@ -21,7 +21,8 @@ The callback url for this sinatra template is `localhost:9292/auth/oauthed/callb
 
 After you've created an application on the provider, add the client id and the client secret of it to the `.env` file.
 
-For the `APPLICATION_SCOPES_REQUESTED`, separate scopes with commas.
+For the `APPLICATION_SCOPES_REQUESTED`, separate scopes with whitespace
+For `USER_ATTRIBUTES`, separate values with whitespace
 
 ## Directories / files
 
