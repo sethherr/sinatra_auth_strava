@@ -46,8 +46,6 @@ module Sinatra
         end
 
         # The authenticated user object
-        #
-        # Supports a variety of methods, configurable in .env
         def oauthed_user
           warden.user
         end

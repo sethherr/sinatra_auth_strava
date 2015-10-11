@@ -10,11 +10,16 @@
     .panel-body
       %p
         %strong
-          user
+          Response to request
         %code
-          = @user
-      %p
-        %strong
-          warden
-        %code
-          = @warden
+          = @req
+      / %p
+      /   %strong
+      /     user
+      /   %code
+      /     = @user
+      / %p
+      /   %strong
+      /     warden
+      /   %code
+      /     = @warden

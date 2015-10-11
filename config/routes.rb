@@ -23,6 +23,9 @@ module Example
       authenticate!
       @user = oauthed_user
       @warden = env['warden']
+
+      # This is how to make requests to the API - include the path, get a response.
+      @req = oauthed_raw_request('me') 
       haml :demo_index
     end
 
@@ -42,9 +45,8 @@ module Example
       redirect '/'
     end
 
-    # You may not need this
     get '/logout' do
-      env['warden'].logout
+      logout!
       "Peace!"
     end
   end

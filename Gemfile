@@ -20,7 +20,8 @@ gem 'dotenv', '~> 2.0.2'
 gem 'sinatra-asset-pipeline', '~> 0.7.0'
 gem 'uglifier'
 gem 'slim'
-gem 'sass'
+gem 'sass', :require => 'sass'
+gem 'coffee-script', :require => 'coffee-script'
 
 # Bower packages block!!
 source 'https://rails-assets.org' do
