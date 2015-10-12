@@ -1,8 +1,11 @@
 ### A [Sinatra](http://www.sinatrarb.com/) template for [Grape-Doorkeep applications](https://github.com/sethherr/grape-doorkeeper)
 
-This is a template application to build mini websites authenticated with OAuth2, such as [Doorkeeper](https://github.com/doorkeeper-gem/doorkeeper) provides.
+A template application for building mini web sites/services authenticated with OAuth2.
 
-If you aren't connecting to an authentication with doorkeeper, you may have to change 
+- No database required
+- [warden-oauth](https://github.com/Zensaburou/warden-oauthed) for authentication
+- [Includes rails assets for bower package management](#rails-assets)
+
 
 ## Using it:
 
@@ -56,6 +59,6 @@ Since Javascript packages change quickly, it's a particularly good idea to lock 
 
 So you can safely update your packages with `bundle update`
 
-----
+=======
 
-Many thanks to [sinatra_auth_github](https://github.com/atmos/sinatra_auth_github) from which this draws inspiration.
+Many thanks to [sinatra_auth_github](https://github.com/atmos/sinatra_auth_github) :shipit: from which this draws inspiration.
