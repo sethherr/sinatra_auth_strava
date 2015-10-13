@@ -20,8 +20,8 @@ gem 'dotenv', '~> 2.0.2'
 gem 'sinatra-asset-pipeline', '~> 0.7.0'
 gem 'uglifier'
 gem 'slim'
-gem 'sass', :require => 'sass'
-gem 'coffee-script', :require => 'coffee-script'
+gem 'sass'
+gem 'coffee-script'
 
 # Bower packages block!!
 source 'https://rails-assets.org' do
@@ -34,12 +34,11 @@ group :development do
   gem 'rerun'
 end
 
-group :test do 
-  gem 'rack-test', :require => "rack/test"
+group :test do
   gem 'rspec', '~> 2.7'
+  gem 'rack-test', require: 'rack/test'
   gem 'guard'
   gem 'addressable'
   gem 'guard-rubocop'
   gem 'guard-rspec', '~> 4.2.8'
 end
-  

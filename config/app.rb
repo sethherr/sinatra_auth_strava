@@ -2,7 +2,7 @@ ENV['RACK_ENV'] ||= 'development'
 
 require 'rubygems' unless defined?(Gem)
 require 'bundler'
-Bundler.require(:default, ENV["RACK_ENV"].to_sym)
+Bundler.require(:default, ENV['RACK_ENV'].to_sym)
 require 'dotenv'
 Dotenv.load
 
@@ -11,14 +11,13 @@ require 'sinatra/base'
 module Sinatra
   module Auth
     module Oauthed
-
       class BadAuthentication < Sinatra::Base
         enable :raise_errors
         disable :show_exceptions
 
         helpers do
           def unauthorized_template
-            @unauthenticated_template ||= File.read(File.join(File.expand_path('../../', __FILE__), "views", "401.html"))
+            @unauthenticated_template ||= File.read(File.join(File.expand_path('../../', __FILE__), 'views', '401.html'))
           end
         end
 

@@ -1,20 +1,12 @@
 require 'spec_helper'
 
 describe Example::App do
-  
   def app
     @app ||= Example::App
   end
 
-  describe "GET '/no_authentication'" do
-    it 'renders the index page successfully' do
-      get '/no_authentication'
-      expect(last_response).to be_ok
-    end
-  end
-
-  describe "GET '/'" do 
-    it 'requesting an url that requires authentication redirects to the redirect uri' do
+  describe "GET '/'" do
+    it 'requesting a url that requires authentication redirects to redirect uri' do
       response = get '/'
 
       uri = Addressable::URI.parse(response.headers['Location'])
