@@ -6,6 +6,7 @@ A template application for building mini web sites/services authenticated with O
 - [warden-oauth](https://github.com/Zensaburou/warden-oauthed) for authentication
 - [Includes rails assets for bower package management](#rails-assets)
 
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Using it:
 

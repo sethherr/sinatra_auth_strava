@@ -1,0 +1,15 @@
+{
+  "name": "Sinatra OAuthed Template",
+  "description": "Sinatra app with authentication",
+  "repository": "https://github.com/sethherr/sinatra_oauthed_template",
+  "keywords": [
+    "ruby",
+    "sinatra",
+    "oauth2",
+    "warden",
+    "grape-doorkeeper"
+  ],
+  "env": {
+    "CUSTOM_RUBY_VERSION": "2.2.2"
+  }
+}
