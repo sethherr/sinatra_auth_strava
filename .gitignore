@@ -10,3 +10,6 @@ bin/
 tags
 .ruby-*
 .sass-cache
+*.swp
+*.swo
+.ruby-*
