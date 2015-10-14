@@ -1,19 +1,5 @@
-require 'sinatra/asset_pipeline'
-
 module Example
   class App < Sinatra::Base
-    configure do
-      # Asset configuration and settings
-      set root: File.expand_path('../../', __FILE__)
-      register Sinatra::AssetPipeline
-      set :assets_css_compressor, :sass
-      set :assets_js_compressor, :uglifier
-      if defined?(RailsAssets)
-        RailsAssets.load_paths.each do |path|
-          settings.sprockets.append_path(path)
-        end
-      end
-    end
     enable :sessions
     register Sinatra::Auth::Oauthed
 
