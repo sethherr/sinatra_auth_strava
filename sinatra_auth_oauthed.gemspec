@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'warden-oauthed', '~>0.0.0'
 
   s.add_development_dependency 'rake', '~> 10.4', '>=10.4.2'
-  s.add_development_dependency 'rspec', '~>2.4.0'
+  s.add_development_dependency 'rspec', '~>2.4', '>=2.4.0'
   s.add_development_dependency 'shotgun', '~> 0.9', '>=0.9.1'
   s.add_development_dependency 'randexp', '~>0.1.5'
   s.add_development_dependency 'rack-test', '~>0.5.3'
