@@ -15,10 +15,10 @@ describe Example::App do
       uri.host.should eql('localhost')
 
       params = uri.query_values
-      params['response_type'].should eql('code')
-      params['scope'].should eql('public')
-      params['client_id'].should match(/\w{20}/)
-      params['redirect_uri'].should eql('http://example.org/auth/oauthed/callback')
+      expect(params['response_type']).to eq 'code'
+      expect(params['scope']).to eq 'public'
+      expect(params['client_id']).to match(/\w{20}/)
+      expect(params['redirect_uri']).to eq 'http://example.org/auth/oauthed/callback'
     end
   end
 end
