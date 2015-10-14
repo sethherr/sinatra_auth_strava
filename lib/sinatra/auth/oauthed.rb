@@ -1,10 +1,5 @@
-ENV['RACK_ENV'] ||= 'development'
-
-require 'rubygems' unless defined?(Gem)
-require 'bundler'
-Bundler.require(:default, ENV['RACK_ENV'].to_sym)
-
 require 'sinatra/base'
+require 'warden-oauthed'
 
 module Sinatra
   module Auth
