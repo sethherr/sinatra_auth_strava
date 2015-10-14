@@ -10,7 +10,7 @@ module Sinatra
 
         helpers do
           def unauthorized_template
-            @unauthenticated_template ||= File.read(File.join(File.expand_path('../../', __FILE__), 'views', '401.html'))
+            @unauthenticated_template ||= File.read(File.join(File.dirname(__FILE__), 'views', '401.html'))
           end
         end
 
@@ -100,6 +100,7 @@ module Sinatra
             redirect '/unauthenticated'
           else
             authenticate!
+            redirect '/'
             return_to = session.delete('return_to') || _relative_url_for('/')
             redirect return_to
           end

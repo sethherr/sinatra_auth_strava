@@ -1,10 +1,9 @@
-# encoding: utf-8
 ENV['RACK_ENV'] ||= 'development'
-
-require File.expand_path('../lib/sinatra_auth_oauthed.rb', __FILE__)
-require File.expand_path('../spec/app.rb', __FILE__)
-require 'rubygems' unless defined?(Gem)
 require 'bundler'
-Bundler.require(:default, ENV['RACK_ENV'].to_sym)
+require 'bundler/setup'
+
+$LOAD_PATH << File.dirname(__FILE__) + '/lib'
+require File.expand_path(File.join(File.dirname(__FILE__), 'lib', 'sinatra_auth_oauthed'))
+require File.expand_path(File.join(File.dirname(__FILE__), 'spec', 'app'))
 
 run Example::App

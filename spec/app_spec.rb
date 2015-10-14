@@ -6,7 +6,7 @@ describe Example::App do
   end
 
   describe "GET '/'" do
-    it 'requesting a url that requires authentication redirects to redirect uri' do
+    it 'redirects to redirect uri when requesting a url requiring authentication' do
       response = get '/'
 
       uri = Addressable::URI.parse(response.headers['Location'])
