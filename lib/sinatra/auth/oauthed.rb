@@ -113,5 +113,3 @@ module Sinatra
     end
   end
 end
-
-require './config/routes.rb'
