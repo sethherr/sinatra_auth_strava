@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shotgun', '~> 0.9', '>=0.9.1'
   s.add_development_dependency 'randexp', '~>0.1.5'
   s.add_development_dependency 'rack-test', '~>0.5.3'
+  s.add_development_dependency 'addressable', '~>2.3', '>=2.3.8'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
