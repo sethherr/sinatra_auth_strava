@@ -85,14 +85,6 @@ module Sinatra
           manager[:oauthed_callback_url] = '/auth/oauthed/callback'
         end
 
-        # Sign cookie sessions in with AS::Verifier
-        ENV['WARDEN_OAUTHED_VERIFIER_SECRET'] ||= ENV['OAUTHED_VERIFIER_SECRET']
-
-        unless ENV['WARDEN_OAUTHED_VERIFIER_SECRET']
-          warn 'No WARDEN_OAUTHED_VERIFIER_SECRET environmental variable found.'
-          warn 'Your sessions are likely being stored insecurely.'
-        end
-
         app.helpers Helpers
 
         app.get '/auth/oauthed/callback' do

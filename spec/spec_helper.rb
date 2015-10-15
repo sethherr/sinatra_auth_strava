@@ -2,7 +2,7 @@ ENV['APPLICATION_CLIENT_ID'] = 'dddc188f84e348ddae69f17dd63e758ded4cc24abed435a5
 ENV['APPLICATION_CLIENT_SECRET'] = 'e35b8e02901a3ca1b5b1e0c4cf3e1e6dbd1855de4684bd95175721428816ae96'
 ENV['APPLICATION_SCOPES_REQUESTED'] = 'public'
 ENV['OAUTH_BASE_URL'] = 'http://localhost:3000'
-ENV['OAUTHED_VERIFIER_SECRET'] = 'MyStu9GTLJX7vhF0LKQ9dQ-cjjTwMFWTkHV6VqE7ipBpwdwwamVdJx1AXkCuOu4g'
+ENV['SESSION_KEY'] = 'Set a key'
 ENV['USER_ATTRIBUTES'] = 'id full_name email'
 ENV['RACK_ENV'] = 'test'
 
@@ -18,3 +18,4 @@ require 'app'
 RSpec.configure do |conf|
   conf.include Rack::Test::Methods
 end
+ 
