@@ -81,7 +81,7 @@ module Sinatra
           manager[:strava_client_id]    = ENV['STRAVA_CLIENT_ID']
           manager[:strava_secret]       = ENV['STRAVA_CLIENT_SECRET']
           manager[:strava_scopes]       = ENV['STRAVA_SCOPES_REQUESTED']
-          manager[:strava_oauth_domain] = ENV['STRAVA_BASE_URL']
+          manager[:strava_oauth_domain] = 'https://www.strava.com/oauth/authorize'
           manager[:strava_callback_url] = '/auth/sinatra/callback'
         end
 
