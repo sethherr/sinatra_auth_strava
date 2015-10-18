@@ -3,7 +3,7 @@ require 'warden-oauthed'
 
 module Sinatra
   module Auth
-    module Oauthed
+    module Strava
       class BadAuthentication < Sinatra::Base
         enable :raise_errors
         disable :show_exceptions
@@ -25,20 +25,20 @@ module Sinatra
           env['warden']
         end
 
-        def authenticate!(*args)
+        def strava_authenticate!(*args)
           warden.authenticate!(*args)
         end
 
-        def authenticated?(*args)
+        def strava_authenticated?(*args)
           warden.authenticated?(*args)
         end
 
-        def logout!
+        def strava_logout!
           warden.logout
         end
 
         # The authenticated user object
-        def oauthed_user
+        def strava_user
           warden.user
         end
 
@@ -49,10 +49,10 @@ module Sinatra
         # Returns a rest client response object
         #
         # Examples
-        #   oauthed_raw_request("/user")
+        #   strava_raw_request("/user")
         #   # => RestClient::Response
-        def oauthed_raw_request(path)
-          oauthed_user.oauthed_raw_request(path)
+        def strava_raw_request(path)
+          strava_user.strava_raw_request(path)
         end
 
         # Send a API GET request to the path defined in .env and parse the response body
@@ -62,10 +62,10 @@ module Sinatra
         # Returns a parsed JSON response
         #
         # Examples
-        #   oauthed_request("/user")
+        #   strava_request("/user")
         #   # => { 'login' => 'atmos', ... }
-        def oauthed_request(path)
-          oauthed_user.oauthed_request(path)
+        def strava_request(path)
+          strava_user.strava_request(path)
         end
 
         def _relative_url_for(path)
@@ -75,23 +75,23 @@ module Sinatra
 
       def self.registered(app)
         app.use Warden::Manager do |manager|
-          manager.default_strategies :oauthed
+          manager.default_strategies :strava
           manager.failure_app = BadAuthentication
 
-          manager[:oauthed_client_id]    = ENV['APPLICATION_CLIENT_ID']
-          manager[:oauthed_secret]       = ENV['APPLICATION_CLIENT_SECRET']
-          manager[:oauthed_scopes]       = ENV['APPLICATION_SCOPES_REQUESTED']
-          manager[:oauthed_oauth_domain] = ENV['OAUTH_BASE_URL']
-          manager[:oauthed_callback_url] = '/auth/oauthed/callback'
+          manager[:strava_client_id]    = ENV['STRAVA_CLIENT_ID']
+          manager[:strava_secret]       = ENV['STRAVA_CLIENT_SECRET']
+          manager[:strava_scopes]       = ENV['STRAVA_SCOPES_REQUESTED']
+          manager[:strava_oauth_domain] = ENV['STRAVA_BASE_URL']
+          manager[:strava_callback_url] = '/auth/sinatra/callback'
         end
 
         app.helpers Helpers
 
-        app.get '/auth/oauthed/callback' do
+        app.get '/auth/sinatra/callback' do
           if params['error']
             redirect '/unauthenticated'
           else
-            authenticate!
+            strava_authenticate!
             redirect '/'
             return_to = session.delete('return_to') || _relative_url_for('/')
             redirect return_to

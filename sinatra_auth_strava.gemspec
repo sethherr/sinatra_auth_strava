@@ -1,19 +1,19 @@
 # -*- encoding: utf-8 -*-
 $LOAD_PATH.push File.expand_path('../lib', __FILE__)
-require 'sinatra/auth/oauthed/version'
+require 'sinatra/auth/strava/version'
 
 Gem::Specification.new do |s|
-  s.name        = 'sinatra_auth_oauthed'
-  s.version     = Sinatra::Auth::Oauthed::VERSION
+  s.name        = 'sinatra_auth_strava'
+  s.version     = Sinatra::Auth::Strava::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Seth Herr', 'David Jaress']
-  s.homepage    = 'http://github.com/zensaburou/sinatra_auth_oauthed'
+  s.authors     = ['Seth Herr']
+  s.homepage    = 'http://github.com/sethherr/sinatra_auth_strava'
   s.summary     = 'A sinatra extension for easy oauth integration with oauth providers'
   s.license     = 'MIT'
   s.description = s.summary
 
   s.add_dependency 'sinatra', '~>1.0'
-  s.add_dependency 'warden-oauthed', '~>0.0.0'
+  s.add_dependency 'warden-strava', '~>0.0.0'
 
   s.add_development_dependency 'rake', '~> 10.4', '>=10.4.2'
   s.add_development_dependency 'rspec', '~>2.4', '>=2.4.0'
