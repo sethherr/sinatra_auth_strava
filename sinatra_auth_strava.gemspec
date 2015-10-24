@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = s.summary
 
   s.add_dependency 'sinatra', '~>1.0'
-  s.add_dependency 'warden-strava', '~>0.0.0'
+  s.add_dependency 'warden-oauthed', '~>0.0.0'
 
   s.add_development_dependency 'rake', '~> 10.4', '>=10.4.2'
   s.add_development_dependency 'rspec', '~>2.4', '>=2.4.0'
